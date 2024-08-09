@@ -10,7 +10,13 @@ export default {
   },
   data() {
     return {
-
+      title: 'App 1'
+    }
+  },
+  methods: {
+    // 5. Використайте метод для обробки події кліку, який змінює стан інших компонентів.
+    changeTitle(title) {
+      this.title = title;
     }
   }
 }
@@ -18,10 +24,11 @@ export default {
 
 <template>
   <main>
+    {{ title }}
     <!--tasks 1-3-->
     <User/>
-    <!--task 4-->
-    <Products/>
+    <!--task 4-5-->
+    <Products @change-title="changeTitle"/>
   </main>
 </template>
 

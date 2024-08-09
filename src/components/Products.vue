@@ -1,6 +1,7 @@
 <script>
 export default {
   name: 'Products',
+  emits: ['changeTitle'],
   data() {
     return {
       products: [
@@ -12,7 +13,8 @@ export default {
         {id: 6, name: 'ПК 3', price: 125},
         {id: 7, name: 'Ноутбук 4', price: 350},
         {id: 8, name: 'ПК 4', price: 90},
-      ]
+      ],
+      title: 'App 2'
     }
   },
   methods: {
@@ -27,13 +29,19 @@ export default {
 </script>
 
 <template>
-  <div class="products">
-    <article v-for="product in productsFilter()" :data-product-id="product.id">
-      <p>
-        {{ product.name }} - {{ product.price }}$
-      </p>
-    </article>
-  </div>
+  <section>
+    <div class="products">
+      <article v-for="product in productsFilter()" :data-product-id="product.id">
+        <p>
+          {{ product.name }} - {{ product.price }}$
+        </p>
+      </article>
+    </div>
+    <!--5. Використайте метод для обробки події кліку, який змінює стан інших компонентів.-->
+    <button @click="$emit('changeTitle', title)">
+      Змінити заголовок
+    </button>
+  </section>
 </template>
 
 <style scoped>

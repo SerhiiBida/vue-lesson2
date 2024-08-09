@@ -1,10 +1,12 @@
 <script>
 import User from '@/components/User.vue';
+import Products from "@/components/Products.vue";
 
 export default {
   name: 'App',
   components: {
-    User
+    User,
+    Products
   },
   data() {
     return {
@@ -18,6 +20,8 @@ export default {
   <main>
     <!--tasks 1-3-->
     <User/>
+    <!--task 4-->
+    <Products/>
   </main>
 </template>
 

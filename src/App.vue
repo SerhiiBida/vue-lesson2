@@ -39,7 +39,7 @@ export default {
     <Login/>
     <!--task 9-10-->
     <Posts/>
-    <!--task 11-13-->
+    <!--task 11-16-->
     <Product/>
   </main>
 </template>

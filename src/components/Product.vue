@@ -76,6 +76,13 @@ export default {
     // 14. Створіть watcher, який реагує на зміни в computed property.
     sumViews(newValue, oldValue){
       alert(`New: ${newValue}\nOld: ${oldValue}`);
+    },
+    // 16. Використовуйте опцію immediate для виклику watcher при ініціалізації компонента.
+    'views.0': {
+      handler(newValue){
+        console.log(newValue);
+      },
+      immediate: true
     }
   }
 }

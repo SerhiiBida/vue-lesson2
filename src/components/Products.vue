@@ -71,7 +71,3 @@ export default {
     </button>
   </section>
 </template>
-
-<style scoped>
-
-</style>

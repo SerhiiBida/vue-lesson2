@@ -82,7 +82,3 @@ export default {
     </button>
   </form>
 </template>
-
-<style scoped>
-
-</style>

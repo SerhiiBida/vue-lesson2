@@ -127,7 +127,3 @@ export default {
     </p>
   </section>
 </template>
-
-<style scoped>
-
-</style>

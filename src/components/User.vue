@@ -41,7 +41,3 @@ export default {
     <input @input="changeName" type="text" name="name" id="name" :value="user.name">
   </div>
 </template>
-
-<style scoped>
-
-</style>

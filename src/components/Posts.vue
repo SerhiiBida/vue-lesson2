@@ -23,7 +23,9 @@ export default {
   computed: {
     // 9. Створіть computed property, яке комбінує дані відповіді від HTTP запиту та з рекативною змінною.
     dataOutput() {
-      return `${this.title}: ${this.data ? JSON.stringify(this.data) : 'Чекаємо...'}`;
+      const result = this.data ? JSON.stringify(this.data) : 'Чекаємо...';
+
+      return `${this.title}: ${result}`;
     },
     // 10. Створіть кілька computed properties, які залежать одне від одного.
     sumViews(){
@@ -60,7 +62,3 @@ export default {
     </p>
   </section>
 </template>
-
-<style scoped>
-
-</style>

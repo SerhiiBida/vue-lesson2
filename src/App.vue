@@ -43,7 +43,3 @@ export default {
     <Product/>
   </main>
 </template>
-
-<style scoped>
-
-</style>

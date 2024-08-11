@@ -6,7 +6,11 @@ export default {
       product: {
         id: 1,
         name: 'Ноутбук 1',
-        price: 400
+        price: 400,
+        location: {
+          city: 'Kyiv',
+          street: 'Fery, 28'
+        }
       },
       isRequest: false,
       weather: null,
@@ -34,6 +38,7 @@ export default {
   },
   watch: {
     // 11. Використовуйте watcher для відстеження змін у реактивному об’єкті та виведення повідомлення про це.
+    // 15. Використовуйте deep опцію для відстеження властивостей внутрішніх об’єктів.
     product: {
       handler(newProduct){
         alert(`New: ${JSON.stringify(newProduct)}`);
@@ -105,6 +110,13 @@ export default {
       <button @click="views.push(34)">
         +
       </button>
+    </p>
+    <!--15. Використовуйте deep опцію для відстеження властивостей внутрішніх об’єктів.-->
+    <p>
+      <label>
+        Product city:
+      </label>
+      <input v-model="product.location.city" type="text" name="product-city" id="product-city">
     </p>
   </section>
 </template>

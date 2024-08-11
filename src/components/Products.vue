@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     // 4. Створіть метод для фільтрації масиву об'єктів за деяким критерієм.
-    productsFilter() {
+    productsFilterPrice() {
       return this.products.filter((product) => {
         return product.price > 100 && product.price < 600;
       });
@@ -28,11 +28,17 @@ export default {
   computed: {
     // 7. Створіть обчислювальну властивість для виведення даних, обчислених на основі інших реактивних даних.
     averagePrice() {
-      const products = this.productsFilter();
+      const products = this.productsFilterPrice();
 
       const sum = products.reduce((sum, product) => sum + product.price, 0);
 
       return sum / products.length;
+    },
+    // 8. Створіть computed property для фільтрації списку об'єктів.
+    productsFilterName(){
+      return this.products.filter((product) => {
+        return product.name.startsWith('ПК');
+      });
     }
   }
 }
@@ -40,8 +46,9 @@ export default {
 
 <template>
   <section>
+    <!--4. Створіть метод для фільтрації масиву об'єктів за деяким критерієм.-->
     <div class="products">
-      <article v-for="product in productsFilter()" :data-product-id="product.id">
+      <article v-for="product in productsFilterPrice()" :key="product.id" :data-product-id="product.id">
         <p>
           {{ product.name }} - {{ product.price }}$
         </p>
@@ -50,6 +57,14 @@ export default {
     <p>
       Середня ціна: {{ averagePrice }}$
     </p>
+    <!--8. Створіть computed property для фільтрації списку об'єктів.-->
+    <div class="products">
+      <article v-for="product in productsFilterName" :key="product.id" :data-product-id="product.id">
+        <p>
+          {{ product.name }} - {{ product.price }}$
+        </p>
+      </article>
+    </div>
     <!--5. Використайте метод для обробки події кліку, який змінює стан інших компонентів.-->
     <button @click="$emit('changeTitle', title)">
       Змінити заголовок

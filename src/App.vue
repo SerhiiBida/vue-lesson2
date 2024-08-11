@@ -29,7 +29,7 @@ export default {
     {{ title }}
     <!--tasks 1-3-->
     <User/>
-    <!--task 4-5, 7-->
+    <!--task 4-5, 7, 8-->
     <Products @change-title="changeTitle"/>
     <!--task 6-->
     <Login/>

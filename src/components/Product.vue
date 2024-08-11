@@ -9,7 +9,8 @@ export default {
         price: 400
       },
       isRequest: false,
-      weather: null
+      weather: null,
+      views: [45, 34, 78]
     }
   },
   computed: {
@@ -25,6 +26,10 @@ export default {
       }
 
       return result;
+    },
+    // 14. Створіть watcher, який реагує на зміни в computed property.
+    sumViews(){
+      return this.views.reduce((sum, value) => sum + value, 0);
     }
   },
   watch: {
@@ -62,6 +67,10 @@ export default {
       } else {
         this.weather = null;
       }
+    },
+    // 14. Створіть watcher, який реагує на зміни в computed property.
+    sumViews(newValue, oldValue){
+      alert(`New: ${newValue}\nOld: ${oldValue}`);
     }
   }
 }
@@ -81,7 +90,7 @@ export default {
       <label>
         Name:
       </label>
-      <input v-model="product.name" type="text" name="name" id="name">
+      <input v-model="product.name" type="text" name="product-name" id="product-name">
     </p>
     <!--13. Використовуйте watcher для відправлення API запитів при зміні реактивних даних.-->
     <p>
@@ -89,6 +98,13 @@ export default {
       <p>
         {{ currentWeather }}
       </p>
+    </p>
+    <!--14. Створіть watcher, який реагує на зміни в computed property.-->
+    <p>
+      Цифра {{ sumViews }}
+      <button @click="views.push(34)">
+        +
+      </button>
     </p>
   </section>
 </template>

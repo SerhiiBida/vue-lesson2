@@ -24,6 +24,16 @@ export default {
         return product.price > 100 && product.price < 600;
       });
     }
+  },
+  computed: {
+    // 7. Створіть обчислювальну властивість для виведення даних, обчислених на основі інших реактивних даних.
+    averagePrice() {
+      const products = this.productsFilter();
+
+      const sum = products.reduce((sum, product) => sum + product.price, 0);
+
+      return sum / products.length;
+    }
   }
 }
 </script>
@@ -37,6 +47,9 @@ export default {
         </p>
       </article>
     </div>
+    <p>
+      Середня ціна: {{ averagePrice }}$
+    </p>
     <!--5. Використайте метод для обробки події кліку, який змінює стан інших компонентів.-->
     <button @click="$emit('changeTitle', title)">
       Змінити заголовок

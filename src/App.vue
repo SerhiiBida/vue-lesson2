@@ -35,7 +35,7 @@ export default {
     <Products @change-title="changeTitle"/>
     <!--task 6-->
     <Login/>
-    <!--task 9-->
+    <!--task 9-10-->
     <Posts/>
   </main>
 </template>

@@ -2,10 +2,12 @@
 import User from '@/components/User.vue';
 import Products from "@/components/Products.vue";
 import Login from "@/components/Login.vue";
+import Posts from "@/components/Posts.vue";
 
 export default {
   name: 'App',
   components: {
+    Posts,
     Login,
     User,
     Products
@@ -33,6 +35,8 @@ export default {
     <Products @change-title="changeTitle"/>
     <!--task 6-->
     <Login/>
+    <!--task 9-->
+    <Posts/>
   </main>
 </template>
 

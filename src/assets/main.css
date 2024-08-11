@@ -13,3 +13,13 @@
   gap: 10px;
   font-size: 24px;
 }
+
+/* Login.vue */
+.login {
+  margin: 20px 0;
+}
+
+.login-error,
+.password-error {
+  color: red;
+}
